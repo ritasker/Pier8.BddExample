@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pier8.BddExample", "Pier8.BddExample\Pier8.BddExample.csproj", "{7581115B-9929-417D-9368-41D29698AFEE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pier8.BddExample.AcceptanceTests", "Pier8.BddExample.AcceptanceTests\Pier8.BddExample.AcceptanceTests.csproj", "{FC4796B1-D64A-4355-9682-770D50A0F477}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{7581115B-9929-417D-9368-41D29698AFEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7581115B-9929-417D-9368-41D29698AFEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7581115B-9929-417D-9368-41D29698AFEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC4796B1-D64A-4355-9682-770D50A0F477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC4796B1-D64A-4355-9682-770D50A0F477}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC4796B1-D64A-4355-9682-770D50A0F477}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC4796B1-D64A-4355-9682-770D50A0F477}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
