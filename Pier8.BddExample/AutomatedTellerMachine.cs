@@ -5,17 +5,19 @@
     public class AutomatedTellerMachine
     {
         private readonly IAccountService _accountService;
-        private readonly ICashDespencer _cashDespencer;
+        private readonly ICashDispenser _cashDispenser;
 
-        public AutomatedTellerMachine(IAccountService accountService, ICashDespencer cashDespencer)
+        public AutomatedTellerMachine(IAccountService accountService, ICashDispenser cashDispenser)
         {
             _accountService = accountService;
-            _cashDespencer = cashDespencer;
+            _cashDispenser = cashDispenser;
         }
 
-        public void Withdraw(decimal withdrawalAmount)
+        public decimal Withdraw(long accountNumber, decimal withdrawalAmount)
         {
-            throw new System.NotImplementedException();
+            _accountService.DebitAccount(accountNumber, withdrawalAmount);
+            var dispensedCash = _cashDispenser.Dispense(withdrawalAmount);
+            return dispensedCash;
         }
     }
 }

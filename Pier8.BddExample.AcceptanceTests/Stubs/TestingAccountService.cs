@@ -21,5 +21,10 @@
         {
             return _accounts[accountNumber];
         }
+
+        public void DebitAccount(long accountNumber, decimal debitAmount)
+        {
+            _accounts[accountNumber] -= debitAmount;
+        }
     }
 }

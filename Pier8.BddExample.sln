@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pier8.BddExample", "Pier8.B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pier8.BddExample.AcceptanceTests", "Pier8.BddExample.AcceptanceTests\Pier8.BddExample.AcceptanceTests.csproj", "{FC4796B1-D64A-4355-9682-770D50A0F477}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pier8.BddExample.UnitTests", "Pier8.BddExample.UnitTests\Pier8.BddExample.UnitTests.csproj", "{3DB1F5F7-20E1-4D5F-8A67-85B1B557F09C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{FC4796B1-D64A-4355-9682-770D50A0F477}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC4796B1-D64A-4355-9682-770D50A0F477}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC4796B1-D64A-4355-9682-770D50A0F477}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DB1F5F7-20E1-4D5F-8A67-85B1B557F09C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DB1F5F7-20E1-4D5F-8A67-85B1B557F09C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DB1F5F7-20E1-4D5F-8A67-85B1B557F09C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DB1F5F7-20E1-4D5F-8A67-85B1B557F09C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

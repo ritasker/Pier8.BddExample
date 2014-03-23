@@ -2,7 +2,7 @@
 {
     using Interfaces;
 
-    public class TestingCashDespencer : ICashDespencer
+    public class TestingCashDispenser : ICashDispenser
     {
         private decimal _funds;
 
@@ -14,6 +14,12 @@
         public decimal GetFunds()
         {
             return _funds;
+        }
+
+        public decimal Dispense(decimal amount)
+        {
+            _funds -= amount;
+            return amount;
         }
     }
 }

@@ -41,7 +41,7 @@
   <ItemGroup>
     <Compile Include="AutomatedTellerMachine.cs" />
     <Compile Include="Interfaces\IAccountService.cs" />
-    <Compile Include="Interfaces\ICashDespencer.cs" />
+    <Compile Include="Interfaces\ICashDispenser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -13,14 +13,14 @@
         private const decimal AtmFunds = 1024.00m;
         private AutomatedTellerMachine _tellerMachine;
         private TestingAccountService _accountService;
-        private TestingCashDespencer _cashDespencer;
+        private TestingCashDispenser _cashDispenser;
         
         [BeforeScenario]
         public void Setup()
         {
             _accountService = new TestingAccountService();
-            _cashDespencer = new TestingCashDespencer();
-            _tellerMachine = new AutomatedTellerMachine(_accountService, _cashDespencer);
+            _cashDispenser = new TestingCashDispenser();
+            _tellerMachine = new AutomatedTellerMachine(_accountService, _cashDispenser);
         }
 
         [Given(@"the account is in credit")]
@@ -32,13 +32,13 @@
         [Given(@"the dispenser contains cash")]
         public void GivenTheDispenserContainsCash()
         {
-            _cashDespencer.AddFunds(AtmFunds);
+            _cashDispenser.AddFunds(AtmFunds);
         }
 
         [When(@"the customer requests cash")]
         public void WhenTheCustomerRequestsCash()
         {
-            _tellerMachine.Withdraw(WithdrawalAmount);
+            _tellerMachine.Withdraw(AccountNumber, WithdrawalAmount);
         }
 
         [Then(@"ensure the account is debited")]
@@ -52,7 +52,7 @@
         [Then(@"the cash is dispensed")]
         public void ThenTheCashIsDispensed()
         {
-            var funds = _cashDespencer.GetFunds();
+            var funds = _cashDispenser.GetFunds();
             funds.Should().Be((AtmFunds - WithdrawalAmount));
         }
     }
