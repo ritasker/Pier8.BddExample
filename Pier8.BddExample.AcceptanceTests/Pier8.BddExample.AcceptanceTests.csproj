@@ -51,11 +51,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\WithdrawCashFeature.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WithdrawCashFeature.feature</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Steps\AtmSteps.cs" />
+    <Compile Include="Stubs\TestingCashDespencer.cs" />
+    <Compile Include="Stubs\TestingAccountService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Features\WithdrawCashFeature.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>WithdrawCashFeature.feature.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pier8.BddExample\Pier8.BddExample.csproj">
+      <Project>{7581115B-9929-417D-9368-41D29698AFEE}</Project>
+      <Name>Pier8.BddExample</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
