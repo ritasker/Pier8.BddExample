@@ -24,13 +24,13 @@
 
             _cashDespencer = new Mock<ICashDispenser>();
             _cashDespencer
-                .Setup(x => x.Dispense(_withdrawalAmount))
+                .Setup(x => x.GetCash(_withdrawalAmount))
                 .Returns(_withdrawalAmount)
                 .Verifiable();
 
             var subject = new AutomatedTellerMachine(_accountService.Object, _cashDespencer.Object);
 
-            _result = subject.Withdraw(accountNumber, _withdrawalAmount);
+            _result = subject.Withdraw(_withdrawalAmount, accountNumber);
         }
 
         [Fact]
@@ -40,13 +40,13 @@
         }
 
         [Fact]
-        public void ShouldDispenseTheCash()
+        public void ShouldGetTheCashFromTheDispenser()
         {
             _cashDespencer.Verify();
         }
 
         [Fact]
-        public void ShouldReturnTheDispensedCash()
+        public void ShouldDispenceTheCash()
         {
             _result.Should().Be(_withdrawalAmount);
         }

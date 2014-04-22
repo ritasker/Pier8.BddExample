@@ -17,7 +17,7 @@
             _accounts.Add(accountNumber, funds);
         }
 
-        public decimal GetAvailablFunds(long accountNumber)
+        public decimal GetAvailableFunds(long accountNumber)
         {
             return _accounts[accountNumber];
         }

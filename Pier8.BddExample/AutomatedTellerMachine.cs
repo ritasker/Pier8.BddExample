@@ -13,11 +13,12 @@
             _cashDispenser = cashDispenser;
         }
 
-        public decimal Withdraw(long accountNumber, decimal withdrawalAmount)
+        public decimal Withdraw(decimal withdrawalAmount, long accountNumber)
         {
             _accountService.DebitAccount(accountNumber, withdrawalAmount);
-            var dispensedCash = _cashDispenser.Dispense(withdrawalAmount);
+            var dispensedCash = _cashDispenser.GetCash(withdrawalAmount);
             return dispensedCash;
+            //return 0.0m;
         }
     }
 }

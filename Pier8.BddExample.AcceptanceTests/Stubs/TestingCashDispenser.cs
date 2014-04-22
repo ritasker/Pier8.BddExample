@@ -16,7 +16,7 @@
             return _funds;
         }
 
-        public decimal Dispense(decimal amount)
+        public decimal GetCash(decimal amount)
         {
             _funds -= amount;
             return amount;

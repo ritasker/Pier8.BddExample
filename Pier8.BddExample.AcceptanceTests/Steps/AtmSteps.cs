@@ -7,14 +7,16 @@
     [Binding]
     public class AtmSteps
     {
-        private const decimal WithdrawalAmount = 64.00m;
         private const long AccountNumber = 178817326296;
-        private const decimal InitialFunds = 256.00m;
-        private const decimal AtmFunds = 1024.00m;
+        private const decimal InitialAccountFunds = 256.00m;
+        private const decimal InitialAtmFunds = 1024.00m;
+        private const decimal WithdrawalAmount = 64.00m;
+
         private AutomatedTellerMachine _tellerMachine;
         private TestingAccountService _accountService;
         private TestingCashDispenser _cashDispenser;
-        
+        private decimal _returnedFunds;
+
         [BeforeScenario]
         public void Setup()
         {
@@ -26,34 +28,33 @@
         [Given(@"the account is in credit")]
         public void GivenTheAccountIsInCredit()
         {
-            _accountService.AddAccount(AccountNumber, InitialFunds);
+            _accountService.AddAccount(AccountNumber, InitialAccountFunds);
         }
 
         [Given(@"the dispenser contains cash")]
         public void GivenTheDispenserContainsCash()
         {
-            _cashDispenser.AddFunds(AtmFunds);
+            _cashDispenser.AddFunds(InitialAtmFunds);
         }
 
         [When(@"the customer requests cash")]
         public void WhenTheCustomerRequestsCash()
         {
-            _tellerMachine.Withdraw(AccountNumber, WithdrawalAmount);
+            _returnedFunds = _tellerMachine.Withdraw(WithdrawalAmount, AccountNumber);
         }
 
         [Then(@"ensure the account is debited")]
         public void ThenEnsureTheAccountIsDebited()
         {
-            var availablFunds = _accountService.GetAvailablFunds(AccountNumber);
-            availablFunds.Should().Be((InitialFunds - WithdrawalAmount));
+            var availableFunds = _accountService.GetAvailableFunds(AccountNumber);
+            availableFunds.Should().Be((InitialAccountFunds - WithdrawalAmount));
 
         }
 
         [Then(@"the cash is dispensed")]
         public void ThenTheCashIsDispensed()
         {
-            var funds = _cashDispenser.GetFunds();
-            funds.Should().Be((AtmFunds - WithdrawalAmount));
+            _returnedFunds.Should().Be((WithdrawalAmount));
         }
     }
 }

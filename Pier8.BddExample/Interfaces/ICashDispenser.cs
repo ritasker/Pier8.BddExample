@@ -2,6 +2,6 @@
 {
     public interface ICashDispenser
     {
-        decimal Dispense(decimal amount);
+        decimal GetCash(decimal amount);
     }
 }

@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pier8.BddExample.Acceptance
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pier8.BddExample.UnitTests", "Pier8.BddExample.UnitTests\Pier8.BddExample.UnitTests.csproj", "{3DB1F5F7-20E1-4D5F-8A67-85B1B557F09C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9BC72653-BABA-46C1-9F84-A4EA188B37C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{549633AB-B3E5-41C2-ACD2-7638AFE0458F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,5 +32,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FC4796B1-D64A-4355-9682-770D50A0F477} = {9BC72653-BABA-46C1-9F84-A4EA188B37C5}
+		{3DB1F5F7-20E1-4D5F-8A67-85B1B557F09C} = {9BC72653-BABA-46C1-9F84-A4EA188B37C5}
+		{7581115B-9929-417D-9368-41D29698AFEE} = {549633AB-B3E5-41C2-ACD2-7638AFE0458F}
 	EndGlobalSection
 EndGlobal
